@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uncle Goki - My Profile Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <article data-testid="test-profile-card" class="profile-card">
+    <figure id="avatar">
+      <img 
+        src="https://media.licdn.com/dms/image/v2/D4D03AQEboIfKgsmjTg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685459861612?e=1762387200&v=beta&t=TCMNKHaI3aEnEMu49NubJSYzfJ3_If9av9U7MRlRS7M" 
+        alt="User avatar" 
+        data-testid="test-user-avatar" 
+      />
+    </figure>
+
+    <div class="profile-content">
+      <header>
+        <h2 data-testid="test-user-name">God'swill Odjesawha</h2>
+      </header>
+
+      <p data-testid="test-user-bio">
+        A passionate Python and JavaScript developer.
+      </p>
+
+      <p class="timestamp">
+        Current time (ms): 
+        <span data-testid="test-user-time" id="user-time"></span>
+      </p>
+
+      <nav aria-label="Social media links" data-testid="test-user-social-links" class="social-links">
+        <ul>
+          <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a></li>
+          <li><a href="https://github.com/Wilx1/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/will-lux/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a></li>
+        </ul>
+      </nav>
+
+      <section data-testid="test-user-hobbies" class="list-section">
+        <h3>Hobbies</h3>
+        <ul>
+          <li>Coding</li>
+          <li>Music</li>
+          <li>Reading</li>
+        </ul>
+      </section>
+
+      <section data-testid="test-user-dislikes" class="list-section">
+        <h3>Dislikes</h3>
+        <ul>
+          <li>Cooking</li>
+          <li>Laziness</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <script src="myScript.js"></script>
+</body>
+</html>
