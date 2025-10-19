@@ -21,4 +21,4 @@ Follow these steps to run it on your computer:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/profile-card-project.git
+   git clone https://github.com/Wilx1/profile-card-project.git
