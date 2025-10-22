@@ -1,4 +1,3 @@
-alert(9)
 document.getElementById("user-time").textContent = Date.now();
 
 setInterval(() => {
