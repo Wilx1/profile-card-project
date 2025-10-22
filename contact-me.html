@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uncle Goki | Contact Me</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main data-testid="test-contact-page">
+        <article data-testid="test-contact-card" class="card">
+            <section data-testid="test-contact-me">
+              <header id="heading">
+                <h2 data-testid="test-contact-heading" class="heading">Contact El'sWill</h2>
+                <nav data-testid="test-contact-nav" class="nav">
+                    <a href="./index.html">Home</a>
+                    <a href="./about-me.html">About Me</a>
+                </nav>
+              </header>
+
+              <div data-testid="test-contact-me" id="bio">
+                    <h3>Let's chat</h3>
+                  <form action="">
+                    <div data-testid="test-contact-name">
+                        <label for="fullname">Full name: *</label>
+                        <input type="text" name="fullname" id="fullname" autofocus required/>
+                        <span class="error" id="error-fullname" data-testid="test-contact-error-name" aria-describedby="fullname"> </span>
+                    </div>
+                    <div data-testid="test-contact-email">
+                        <label for="email">Email: *</label>
+                        <input type="email" name="email" id="email" required/>
+                        <span class="error" id="error-email" data-testid="test-contact-error-email" aria-describedby="email">  </span>
+                    </div>
+                    <div data-testid="test-contact-subject">
+                        <label for="subject">Subject: </label>
+                        <input type="text" name="subject" id="subject" />
+                        <span class="error" id="error-subject" data-testid="test-contact-error-subject" aria-describedby="subject">  </span>
+                    </div>
+                      <div data-testid="test-contact-message">
+                        <label for="message">Message: *</label>
+                          <div>
+                            <textarea name="message" id="message" cols="59" rows="4" required></textarea>
+                            <span class="error" id="error-message" data-testid="test-contact-error-message" aria-describedby="message">  </span>
+                          </div>
+                    </div>
+                    <div data-testid="test-contact-submit">
+                        <button type="submit" id="submit">Submit</button>
+                    </div>
+
+                  </form>
+
+                </div>
+
+          </section>
+
+        </article>
+    </main>
+
+  <script>
+    const form = document.querySelector("form");
+    const fullname = document.getElementById("fullname");
+    const fullnameError = document.getElementById("error-fullname");
+    const email = document.getElementById("email");
+    const emailError = document.getElementById("error-email");
+    const subject = document.getElementById("subject");
+    const subjectError = document.getElementById("error-subject");
+    const message = document.getElementById("message");
+    const messageError = document.getElementById("error-message");
+
+    fullname.addEventListener("input", (event) => {
+        if(fullname.validity.valid){
+            fullnameError.textContent = 'Valid';
+            fullnameError.className = 'success';
+        }else{
+            showFullnameError();
+        }
+    })
+
+    email.addEventListener("input", (event) => {
+      if (email.validity.valid) {
+        emailError.textContent = ""; // Remove the message content
+        emailError.textContent = "Valid"; // Write the new message content
+        emailError.className = "success"; // Changes class to success
+      } else {
+        // If there is still an error, show the correct error
+        emailError.textContent = ""
+        showEmailError();
+      }
+    });
+
+    message.addEventListener("input", (event) => {
+        if(message.validity.valid){
+            messageError.textContent = 'Valid';
+            messageError.className = 'success';
+        }else{
+            showMessageError();
+        }
+    })
+
+    form.addEventListener("submit", (event) => {
+      // if the email field is invalid
+      if (!email.validity.valid) {
+        // display an appropriate error message
+        showError();
+        // prevent form submission
+        event.preventDefault();
+      }
+    });
+
+<!--    function showSuccess(){-->
+<!--        fullnameError.textContent = "valid";-->
+<!--        emailError.className = "success active"-->
+<!--    }-->
+
+    function showFullnameError() {
+      if (fullname.validity.valueMissing) {
+        // If empty
+        fullnameError.textContent = "You need to enter your name.";
+      } else if (fullname.validity.typeMismatch) {
+        // If it's not an email address,
+        fullnameError.textContent = "Entered value needs to be a text.";
+      }
+      // Add the `active` class
+      fullnameError.className = "error active";
+      }
+
+      function showEmailError() {
+      if (email.validity.valueMissing) {
+        // If empty
+        emailError.textContent = "You need to enter an email address.";
+      } else if (email.validity.typeMismatch) {
+        // If it's not an email address,
+        emailError.textContent = "Entered value needs to be an email address.";
+      }
+      // Add the `active` class
+      emailError.className = "error active";
+      }
+
+      function showMessageError() {
+      if (message.validity.valueMissing) {
+        // If empty
+        messageError.textContent = "You need to enter your name.";
+      } else if (message.validity.typeMismatch) {
+        // If it's not an email address,
+        messageError.textContent = "Entered value needs to be a text.";
+      }
+      // Add the `active` class
+      messageError.className = "error active";
+      }
+  </script>
+</body>
+</html>

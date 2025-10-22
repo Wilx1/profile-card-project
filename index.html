@@ -7,14 +7,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <article data-testid="test-profile-card" class="profile-card">
-    <figure id="avatar">
-      <img 
-        src="https://media.licdn.com/dms/image/v2/D4D03AQEboIfKgsmjTg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685459861612?e=1762387200&v=beta&t=TCMNKHaI3aEnEMu49NubJSYzfJ3_If9av9U7MRlRS7M" 
-        alt="User avatar" 
-        data-testid="test-user-avatar" 
-      />
-    </figure>
+  <article data-testid="test-profile-card" class="profile-card card">
+    <section data-testid="test-user-info" id="user-info">
+        <figure id="avatar">
+          <img
+            src="https://media.licdn.com/dms/image/v2/D4D03AQEboIfKgsmjTg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685459861612?e=1762387200&v=beta&t=TCMNKHaI3aEnEMu49NubJSYzfJ3_If9av9U7MRlRS7M"
+            alt="User avatar"
+            data-testid="test-user-avatar"
+          />
+        </figure>
+        <nav data-testid="test-profile-nav" class="nav">
+            <a href="./about-me.html">About Me</a>
+            <a href="./contact-me.html">Contact Me</a>
+        </nav>
+
+    </section>
 
     <div class="profile-content">
       <header>
@@ -50,6 +57,7 @@
       <section data-testid="test-user-dislikes" class="list-section">
         <h3>Dislikes</h3>
         <ul>
+          <li>Lies</li>
           <li>Cooking</li>
           <li>Laziness</li>
         </ul>
